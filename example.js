@@ -62,7 +62,8 @@ let interval;
                 { title: 'Green', value: '#00ff00' },
                 { title: 'Yellow', value: '#ffff00', disabled: true },
                 { title: 'Blue', value: '#0000ff' }
-            ]
+            ],
+            validate: (answers) => answers.filter(opt => opt.selected).filter(opt => opt.title === "Blue").length > 0 ? "Blue is ugly!" : true
         },
         {
             type: 'autocomplete',
